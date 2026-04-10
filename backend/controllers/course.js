@@ -61,9 +61,7 @@ const updateCourse = async (req, res) => {
 const deleteCourse=async (req,res)=>{
     try{
       const deleteCourse=await Course.deleteOne(
-        {_id:req.params.id}
-
-      )
+        {_id:req.params.id})
       if(deleteCourse.deletedCount===0)
            res.status(404).json({ message: "Course Not Found" })
         else
